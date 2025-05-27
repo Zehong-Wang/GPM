@@ -1,0 +1,437 @@
+node:
+  cora_full:
+    split: high
+    p: 1
+    q: 1
+    lr: 0.01
+    dropout: 0.1
+    weight_decay: 0.0
+    node_pe: lap
+    node_pe_dim: 8
+    pe_encoder: gru
+    pe_weight: 1
+    use_attn_fusion: False
+    use_cls_token: True
+  pubmed:
+    split: high
+    p: 0.1
+    q: 10
+    lr: 0.01
+    dropout: 0.1
+    weight_decay: 0.0
+    node_pe: lap
+    node_pe_dim: 4
+    pe_encoder: gru
+    pe_weight: 1
+    use_attn_fusion: False
+    use_cls_token: False
+  photo:
+    split: high
+    p: 0.1
+    q: 10
+    lr: 0.01
+    dropout: 0.5
+    weight_decay: 0.01
+    node_pe: lap
+    node_pe_dim: 8
+    pe_encoder: gru
+    pe_weight: 0.1
+    use_attn_fusion: False
+    use_cls_token: False
+  computers:
+    split: high
+    p: 1
+    q: 1
+    lr: 0.01
+    dropout: 0.1
+    weight_decay: 0.01
+    node_pe: lap
+    node_pe_dim: 8
+    pe_encoder: gru
+    pe_weight: 0.5
+    use_attn_fusion: False
+    use_cls_token: True
+  cs:
+    split: high
+    p: 0.1
+    q: 10
+    lr: 0.001
+    dropout: 0.3
+    weight_decay: 0.01
+    node_pe: lap
+    node_pe_dim: 8
+    pe_encoder: gru
+    pe_weight: 0.5
+  physics:
+    split: high
+    p: 0.1
+    q: 10
+    lr: 0.001
+    dropout: 0.5
+    weight_decay: 0.01
+    node_pe: lap
+    node_pe_dim: 8
+    pe_encoder: gru
+    pe_weight: 0.1
+    use_attn_fusion: False
+    use_cls_token: True
+  wikics:
+    split: public
+    p: 1
+    q: 1
+    lr: 0.01
+    dropout: 0.5
+    weight_decay: 0.01
+    node_pe: lap
+    node_pe_dim: 8
+    pe_encoder: gru
+    pe_weight: 1.0
+    use_attn_fusion: False
+    use_cls_token: True
+  blog:
+    split: median
+    p: 1
+    q: 1
+    lr: 0.001
+    dropout: 0.1
+    weight_decay: 0.01
+    node_pe: lap
+    node_pe_dim: 16
+    pe_encoder: gru
+    pe_weight: 0.1
+    use_attn_fusion: False
+    use_cls_token: False
+  flickr_small:
+    split: median
+    p: 1
+    q: 1
+    lr: 0.005
+    dropout: 0.3
+    weight_decay: 0.01
+    node_pe: lap
+    node_pe_dim: 4
+    pe_encoder: gru
+    pe_weight: 0.5
+    use_attn_fusion: False
+    use_cls_token: False
+  flickr:
+    split: public
+    p: 1
+    q: 1
+    lr: 0.01
+    dropout: 0.5
+    weight_decay: 0.01
+    node_pe: lap
+    node_pe_dim: 8
+    pe_encoder: mean
+    pe_weight: 0.5
+    use_attn_fusion: False
+    use_cls_token: False
+  actor:
+    split: median
+    p: 1
+    q: 1
+    lr: 0.01
+    dropout: 0.5
+    weight_decay: 0.0
+    node_pe: lap
+    node_pe_dim: 8
+    pe_encoder: gru
+    pe_weight: 0.5
+    use_attn_fusion: False
+    use_cls_token: False
+  deezer:
+    split: median
+    p: 1
+    q: 1
+    lr: 0.01
+    dropout: 0.1
+    weight_decay: 0.0
+    node_pe: lap
+    node_pe_dim: 16
+    pe_encoder: gru
+    pe_weight: 0.5
+    use_attn_fusion: False
+    use_cls_token: False
+  ratings:
+    split: public
+    p: 10
+    q: 0.1
+    lr: 0.01
+    dropout: 0.3
+    weight_decay: 0.01
+  roman:
+    split: public
+    p: 10
+    q: 0.1
+    lr: 0.01
+    dropout: 0.1
+    weight_decay: 0.01
+  minesweeper:
+    split: public
+    p: 10
+    q: 0.1
+    lr: 0.01
+    dropout: 0.1
+    weight_decay: 0.01
+    node_pe: lap
+    node_pe_dim: 4
+    pe_encoder: gru
+    pe_weight: 1.0
+    use_attn_fusion: False
+    use_cls_token: False
+  tolokers:
+    split: public
+    p: 10
+    q: 0.1
+    lr: 0.01
+    dropout: 0.1
+    weight_decay: 0.0
+    node_pe: lap
+    node_pe_dim: 16
+    pe_encoder: gru
+    pe_weight: 0.1
+  questions:
+    split: public
+    p: 10
+    q: 0.1
+    lr: 0.01
+    dropout: 0.5
+    weight_decay: 0.0
+  arxiv:
+    split: public
+    split_repeat: 1
+    lr: 0.01
+    dropout: 0.1
+    weight_decay: 0.0
+    p: 1
+    q: 1
+    node_pe: lap
+    node_pe_dim: 4
+    pe_encoder: gru
+    pe_weight: 1.0
+    use_attn_fusion: False
+    use_cls_token: False
+  reddit:
+    split: public
+    split_repeat: 1
+    epochs: 1000
+    lr: 0.01
+    dropout: 0.1
+    weight_decay: 0.0
+    p: 1
+    q: 1
+    node_pe: lap
+    node_pe_dim: 8
+    pe_encoder: gru
+    pe_weight: 1.0
+    use_attn_fusion: False
+    use_cls_token: False
+  products:
+    split: public
+    split_repeat: 1
+    epochs: 5000
+    p: 1
+    q: 1
+    lr: 0.01
+    dropout: 0.3
+    weight_decay: 0.0
+    node_pe: lap
+    node_pe_dim: 4
+    pe_encoder: mean
+    pe_weight: 0.5
+    use_attn_fusion: False
+    use_cls_token: False
+  pokec:
+    split: public
+    split_repeat: 1
+    lr: 0.01
+    dropout: 0.1
+    weight_decay: 0.01
+    p: 1
+    q: 1
+    node_pe: lap
+    node_pe_dim: 4
+    pe_encoder: mean
+    pe_weight: 1.0p
+    use_attn_fusion: False
+    use_cls_token: False
+  proteins:
+    split: public
+    split_repeat: 1
+    epochs: 1000
+    lr: 0.01
+    dropout: 0.3
+    weight_decay: 0.0
+    p: 1
+    q: 1
+    node_pe: lap
+    node_pe_dim: 4
+    pe_encoder: gru
+    pe_weight: 1.0
+    use_attn_fusion: False
+    use_cls_token: False
+
+link:
+  link-cora:
+    p: 1
+    q: 1
+    lr: 0.001
+    dropout: 0.3
+    weight_decay: 0.0
+    node_pe: lap
+    node_pe_dim: 4
+    pe_encoder: gru
+    pe_weight: 0.5
+  link-citeseer:
+    p: 1
+    q: 1
+  link-pubmed:
+    p: 1
+    q: 1
+    lr: 0.01
+    dropout: 0.3
+    weight_decay: 0.01
+    node_pe: lap
+    node_pe_dim: 4
+    pe_encoder: gru
+    pe_weight: 1
+  link-photo:
+    p: 1
+    q: 1
+  link-computers:
+    p: 1
+    q: 1
+  link-collab:
+    p: 1
+    q: 1
+    lr: 0.01
+    dropout: 0.1
+    weight_decay: 0.0
+    node_pe: lap
+    node_pe_dim: 4
+    pe_encoder: gru
+    pe_weight: 0.5
+  link-ppa:
+    p: 1
+    q: 1
+  link-ddi:
+    p: 1
+    q: 1
+
+graph:
+  bbbp:
+    split: public
+    batch_size: 1024
+  imdb-b:
+    split: public
+    batch_size: 1024
+    lr: 0.001
+    dropout: 0.1
+    weight_decay: 0.0
+    node_pe: rw
+    pe_encoder: mean
+    node_pe_dim: 8
+    pe_weight: 0.1
+    p: 1
+    q: 0.1
+    use_attn_fusion: False
+    use_cls_token: False
+  imdb-m:
+    split: public
+    batch_size: 1024
+    lr: 0.01
+    dropout: 0.3
+    weight_decay: 0.01
+    node_pe: rw
+    pe_encoder: gru
+    node_pe_dim: 16
+    pe_weight: 0.1
+    p: 1
+    q: 10
+    use_attn_fusion: False
+    use_cls_token: False
+  collab:
+    split: public
+    batch_size: 1024
+    lr: 0.01
+    dropout: 0.1
+    weight_decay: 0.0
+    node_pe: rw
+    pe_encoder: mean
+    node_pe_dim: 4
+    pe_weight: 0.1
+    p: 10
+    q: 10
+    use_attn_fusion: False
+    use_cls_token: False
+  reddit-b:
+    split: public
+    batch_size: 1024
+    lr: 0.01
+    dropout: 0.3
+    weight_decay: 0.0
+    node_pe: rw
+    pe_encoder: mean
+    node_pe_dim: 8
+    pe_weight: 1
+    p: 0.1
+    q: 10
+    use_attn_fusion: False
+    use_cls_token: False
+  reddit-m5k:
+    split: public
+    batch_size: 1024
+    lr: 0.001
+    dropout: 0.1
+    weight_decay: 0.0
+    node_pe: rw
+    pe_encoder: mean
+    node_pe_dim: 8
+    pe_weight: 0.1
+    p: 1
+    q: 1
+    use_attn_fusion: False
+    use_cls_token: True
+  reddit-m12k:
+    split: public
+    batch_size: 256
+    lr: 0.005
+    dropout: 0.1
+    weight_decay: 0.01
+    node_pe: rw
+    pe_encoder: gru
+    node_pe_dim: 8
+    pe_weight: 0.1
+    p: 1
+    q: 1
+    use_attn_fusion: False
+    use_cls_token: False
+  zinc:
+    split: public
+    batch_size: 1024
+    lr: 0.01
+    dropout: 0.1
+    weight_decay: 0.0
+    node_pe: rw
+    node_pe_dim: 8
+    pe_encoder: gru
+    pe_weight: 1.0
+    p: 1
+    q: 1
+    use_attn_fusion: False
+    use_cls_token: False
+  zinc_full:
+    split: public
+    batch_size: 1024
+    lr: 0.01
+    dropout: 0.1
+    weight_decay: 0.0
+    node_pe: rw
+    node_pe_dim: 8
+    pe_encoder: gru
+    pe_weight: 1.0
+    p: 1
+    q: 1
+    use_attn_fusion: False
+    use_cls_token: False

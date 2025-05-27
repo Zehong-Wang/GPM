@@ -1,0 +1,47 @@
+node:
+  acm:
+    dblp:
+      p: 1
+      q: 1
+      lr: 0.005
+      dropout: 0.5
+      weight_decay: 0.0
+  dblp:
+    acm:
+      p: 1
+      q: 1
+      lr: 0.001
+      dropout: 0.5
+      weight_decay: 0.01
+
+  DE:
+    EN:
+      p: 1
+      q: 1
+      lr: 0.01
+      dropout: 0.3
+      weight_decay: 0.01
+    ES:
+      p: 1
+      q: 1
+      lr: 0.01
+      dropout: 0.5
+      weight_decay: 0.0
+    FR:
+      p: 1
+      q: 1
+      lr: 0.01
+      dropout: 0.3
+      weight_decay: 0.01
+    PT:
+      p: 1
+      q: 1
+      lr: 0.001
+      dropout: 0.1
+      weight_decay: 0.01
+    RU:
+      p: 1
+      q: 1
+      lr: 0.01
+      dropout: 0.5
+      weight_decay: 0.0

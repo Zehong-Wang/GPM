@@ -1,0 +1,272 @@
+# Node Classification on Homophily Datasets
+cora:
+  task: node
+  metric: acc
+cora_full:
+  task: node
+  metric: acc
+citeseer:
+  task: node
+  metric: acc
+pubmed:
+  task: node
+  metric: acc
+acm:
+  task: node
+  metric: acc
+dblp:
+  task: node
+  metric: acc
+computers:
+  task: node
+  metric: acc
+photo:
+  task: node
+  metric: acc
+cs:
+  task: node
+  metric: acc
+physics:
+  task: node
+  metric: acc
+wikics:
+  task: node
+  metric: acc
+flickr:
+  task: node
+  metric: acc
+reddit:
+  task: node
+  metric: acc
+yelp:
+  task: node
+  metric: f1
+  num_tasks: 100
+arxiv:
+  task: node
+  metric: acc
+products:
+  task: node
+  metric: acc
+proteins:
+  task: node
+  metric: auc
+  num_tasks: 112
+pokec:
+  task: node
+  metric: acc
+
+# Node Classification on Heterophily Datasets
+deezer:
+  task: node
+  metric: acc
+blog:
+  task: node
+  metric: acc
+flickr_small:
+  task: node
+  metric: acc
+chameleon:
+  task: node
+  metric: acc
+squirrel:
+  task: node
+  metric: acc
+actor:
+  task: node
+  metric: acc
+cornell:
+  task: node
+  metric: acc
+texas:
+  task: node
+  metric: acc
+wisconsin:
+  task: node
+  metric: acc
+roman:
+  task: node
+  metric: acc
+ratings:
+  task: node
+  metric: acc
+minesweeper:
+  task: node
+  metric: auc
+  num_tasks: 1
+tolokers:
+  task: node
+  metric: auc
+  num_tasks: 1
+questions:
+  task: node
+  metric: auc
+  num_tasks: 1
+DE:
+  task: node
+  metric: auc
+  num_tasks: 1
+EN:
+  task: node
+  metric: auc
+  num_tasks: 1
+ES:
+  task: node
+  metric: auc
+  num_tasks: 1
+FR:
+  task: node
+  metric: auc
+  num_tasks: 1
+PT:
+  task: node
+  metric: auc
+  num_tasks: 1
+RU:
+  task: node
+  metric: auc
+  num_tasks: 1
+
+
+# Node Classification on Synthetic Datasets
+pattern:
+  task: node
+  metric: acc
+cluster:
+  task: node
+  metric: acc
+
+
+# Link Prediction
+link-ppa:
+  task: link
+  metric: hits@100
+  num_tasks: 1
+link-collab:
+  task: link
+  metric: hits@50
+  num_tasks: 1
+link-ddi:
+  task: link
+  metric: hits@20
+  num_tasks: 1
+link-cora:
+  task: link
+  metric: hits@20
+  num_tasks: 1
+link-citeseer:
+  task: link
+  metric: hits@20
+  num_tasks: 1
+link-pubmed:
+  task: link
+  metric: hits@20
+  num_tasks: 1
+link-photo:
+  task: link
+  metric: hits@20
+  num_tasks: 1
+link-computers:
+  task: link
+  metric: hits@20
+  num_tasks: 1
+
+
+# Graph Classification
+zinc:
+  task: graph
+  metric: mae
+  num_tasks: 1
+zinc_full:
+  task: graph
+  metric: mae
+  num_tasks: 1
+bbbp:
+  task: graph
+  metric: auc
+  num_tasks: 1
+tox21:
+  task: graph
+  metric: auc
+  num_tasks: 12
+toxcast:
+  task: graph
+  metric: auc
+  num_tasks: 617
+sider:
+  task: graph
+  metric: auc
+  num_tasks: 27
+clintox:
+  task: graph
+  metric: auc
+  num_tasks: 2
+pcba:
+  task: graph
+  metric: ap
+  num_tasks: 128
+muv:
+  task: graph
+  metric: ap
+  num_tasks: 17
+hiv:
+  task: graph
+  metric: auc
+  num_tasks: 1
+bace:
+  task: graph
+  metric: auc
+  num_tasks: 1
+esol:
+  task: graph
+  metric: rmse
+  num_tasks: 1
+freesolv:
+  task: graph
+  metric: rmse
+  num_tasks: 1
+lipo:
+  task: graph
+  metric: rmse
+  num_tasks: 1
+mutag:
+  task: graph
+  metric: acc
+dd:
+  task: graph
+  metric: acc
+nci1:
+  task: graph
+  metric: acc
+enzymes:
+  task: graph
+  metric: acc
+#proteins:
+#  task: graph
+#  metric: acc
+collab:
+  task: graph
+  metric: acc
+imdb-b:
+  task: graph
+  metric: acc
+imdb-m:
+  task: graph
+  metric: acc
+reddit-b:
+  task: graph
+  metric: acc
+reddit-m5k:
+  task: graph
+  metric: acc
+reddit-m12k:
+  task: graph
+  metric: acc
+func:
+  task: graph
+  metric: ap
+  num_tasks: 10
+struct:
+  task: graph
+  metric: mae
+  num_tasks: 11
