@@ -54,8 +54,7 @@ For example, you may use the command
 ```
 python GPM/main.py --dataset computers --use_params
 ```
-
-to reproduce the experimental results. 
+to reproduce the experiments.
 
 ### Dataset
 
