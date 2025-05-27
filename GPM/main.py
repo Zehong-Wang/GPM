@@ -225,11 +225,11 @@ def main():
     set_memory_limit()  # 90% by default
     params = get_args()
 
-    params['data_path'] = osp.join(osp.dirname(__file__), 'cached_data')
-    params['pattern_path'] = osp.join(osp.dirname(__file__), 'cached_patterns')
-    params['save_path'] = osp.join(osp.dirname(__file__), 'model')
+    params['data_path'] = osp.join(osp.dirname(__file__), '..', 'data')
+    params['pattern_path'] = osp.join(osp.dirname(__file__), '..', 'patterns')
+    params['save_path'] = osp.join(osp.dirname(__file__), '..', 'model')
 
-    data_config = osp.join(osp.dirname(__file__), 'config', 'data.yaml')
+    data_config = osp.join(osp.dirname(__file__), '..', 'config', 'data.yaml')
     with open(data_config, 'r') as f:
         data_config = yaml.safe_load(f)
     params['task'] = data_config[params['dataset']]['task']
@@ -237,7 +237,7 @@ def main():
     params['num_tasks'] = data_config[params['dataset']].get('num_tasks', None)
 
     if params["use_params"]:
-        with open(osp.join(osp.dirname(__file__), 'config', 'main.yaml'), 'r') as f:
+        with open(osp.join(osp.dirname(__file__), '..', 'config', 'main.yaml'), 'r') as f:
             default_params = yaml.safe_load(f)
             params.update(default_params[params['task']][params['dataset']])
 
@@ -250,7 +250,7 @@ def main():
         params['pe_encoder'] = 'none'
 
     wandb.init(
-        project="Next Generation GNN",
+        project="GPM",
         config=params,
         mode="disabled" if params["debug"] else "online"
     )

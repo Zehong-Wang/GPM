@@ -213,10 +213,10 @@ def main():
     set_memory_limit()  # 90% by default
     params = get_da_args()
 
-    params['data_path'] = osp.join(osp.dirname(__file__), 'cached_data')
-    params['pattern_path'] = osp.join(osp.dirname(__file__), 'cached_patterns')
+    params['data_path'] = osp.join(osp.dirname(__file__), '..', 'data')
+    params['pattern_path'] = osp.join(osp.dirname(__file__), '..', 'patterns')
 
-    data_config = osp.join(osp.dirname(__file__), 'config', 'data.yaml')
+    data_config = osp.join(osp.dirname(__file__), '..', 'config', 'data.yaml')
     with open(data_config, 'r') as f:
         data_config = yaml.safe_load(f)
     params['task'] = data_config[params['target']]['task']
@@ -225,7 +225,7 @@ def main():
     params['split'] = 'da'
 
     if params["use_params"]:
-        with open(osp.join(osp.dirname(__file__), 'config', 'da.yaml'), 'r') as f:
+        with open(osp.join(osp.dirname(__file__), '..', 'config', 'da.yaml'), 'r') as f:
             default_params = yaml.safe_load(f)
             params.update(default_params[params['task']][params['source']][params['target']])
 
@@ -234,7 +234,7 @@ def main():
         params['eval_every'] = 1
 
     wandb.init(
-        project="Next Generation GNN",
+        project="GPM",
         config=params,
         mode="disabled" if params["debug"] else "online"
     )

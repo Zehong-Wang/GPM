@@ -52,7 +52,7 @@ The code of GPM is presented in folder `/GPM`. You can run `main.py` and specify
 For example, you may use the command
 
 ```
-python main.py --dataset computers --use_params
+python GPM/main.py --dataset computers --use_params
 ```
 
 to reproduce the experimental results. 
