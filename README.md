@@ -33,7 +33,7 @@ Most existing GNNs rely on message passing, which aggregates local neighborhood 
 
 
 
-## Install environment
+## Installation
 
 You may use conda to install the environment. Please run the following script. We run all experiments on a single A40 48G GPU, yet A GPU with 24G memory is sufficient to handle all datasets by setting smaller batch size. 
 
@@ -44,24 +44,66 @@ pip install  dgl -f https://data.dgl.ai/wheels/torch-2.4/cu121/repo.html
 pip install pyg_lib torch_scatter torch_sparse torch_cluster torch_spline_conv -f https://data.pyg.org/whl/torch-2.4.0+cu121.html
 ```
 
-## Run the experiments
 
-You may use the command like
+## Quick Start
+
+The code of GPM is presented in folder `/GPM`. You can run `main.py` and specify any dataset to run experiments. To ensure reproducability, we provide hyper-parameters in `config/main.yaml`. You can simply use command `--use_params` to set tuned hyper-parameters. 
+
+For example, you may use the command
 
 ```
 python main.py --dataset computers --use_params
 ```
 
-to reproduce the experimental results of the paper.
+to reproduce the experimental results. 
 
-## Dataset
+### Dataset
 
-The datasets can be as follows. 
+In our paper, we use various graph benchmark datasets covering node classification, link prediction, graph classification/regression. You can indicate these datasets by 
 
-**Node Classification:** `cora_full`, `computers`, `arxiv`, `products`, `wikics`, `deezer`, `blog`, `flickr`, `flickr_small`. 
+- **Node Classification:** `cora_full`, `computers`, `arxiv`, `products`, `wikics`, `deezer`, `blog`, `flickr`, `flickr_small`. 
 
-**Link Prediction**: `link-cora`, `link-pubmed`, `link-collab`. 
+- **Link Prediction**: `link-cora`, `link-pubmed`, `link-collab`. 
 
-**Graph Classification**: `imdb-b`, `collab`, `reddit-m5k`, `reddit-m12k`. 
+- **Graph Classification**: `imdb-b`, `collab`, `reddit-m5k`, `reddit-m12k`. 
 
-**Graph Regression**: `zinc`, `zinc_full`.
+- **Graph Regression**: `zinc`, `zinc_full`.
+
+We also provide the interfaces of other widely used datasets like `photo`, `physics`, `reddit`, etc. Please check the datasets in `GPM/data/pyg_data_loader.py` for details. 
+
+## Customize Hyper-parameters
+
+TODO
+
+## Domain Adaptation
+
+TODO
+
+## Ablation
+
+TODO
+
+## Citation
+
+If you find the repo is useful for your research, please cite the original paper properly.
+
+```bibtex
+
+@inproceedings{wang2024gpm,
+  title={Beyond Message Passing: Neural Graph Pattern Machine},
+  author={Wang, Zehong and Zhang, Zheyuan and Ma, Tianyi and Chawla, Nitesh V and Zhang, Chuxu and Ye, Yanfang},
+  booktitle={Forty-Second International Conference on Machine Learning},
+  year={2025}, 
+}
+
+@article{wang2025neural,
+  title={Neural Graph Pattern Machine},
+  author={Wang, Zehong and Zhang, Zheyuan and Ma, Tianyi and Chawla, Nitesh V and Zhang, Chuxu and Ye, Yanfang},
+  journal={arXiv preprint arXiv:2501.18739},
+  year={2025}
+}
+
+```
+## Acknowledgement
+
+This repository is based on the codebase of [PyG](https://github.com/pyg-team/pytorch_geometric), [OGB](https://github.com/snap-stanford/ogb), and [VQ](https://github.com/lucidrains/vector-quantize-pytorch). Thanks for their sharing!
