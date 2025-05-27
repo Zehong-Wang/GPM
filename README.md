@@ -34,7 +34,7 @@ GPM's workflow consists of three main steps:
 ### Prerequisites
 - CUDA-compatible GPU (24GB memory minimum, 48GB recommended)
 - CUDA 12.1
-- Python 3.8+
+- Python 3.9+
 
 ### Setup
 ```bash
@@ -116,7 +116,7 @@ Supported domain pairs:
 ## 📂 Repository Structure
 ```
 └── GPM
-    ├── GPM/               # Main package directory
+    ├── GPM/              # Main package directory
     │   ├── data/         # Data loading and preprocessing
     │   ├── model/        # Model architectures
     │   ├── task/         # Task implementations
