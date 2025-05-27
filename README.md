@@ -49,12 +49,10 @@ pip install pyg_lib torch_scatter torch_sparse torch_cluster torch_spline_conv -
 
 The code of GPM is presented in folder `/GPM`. You can run `main.py` and specify any dataset to run experiments. To ensure reproducability, we provide hyper-parameters in `config/main.yaml`. You can simply use command `--use_params` to set tuned hyper-parameters. 
 
-For example, you may use the command
-
+For example, you may use the command to reproduce the experiments.
 ```
 python GPM/main.py --dataset computers --use_params
 ```
-to reproduce the experiments.
 
 ### Dataset
 
@@ -70,17 +68,64 @@ In our paper, we use various graph benchmark datasets covering node classificati
 
 We also provide the interfaces of other widely used datasets like `photo`, `physics`, `reddit`, etc. Please check the datasets in `GPM/data/pyg_data_loader.py` for details. 
 
-## Customize Hyper-parameters
+## Customize Hyper-Parameters
 
-TODO
+We provide a large set of hyper-parameters to be tuned. 
+
+### Training Setup
+- `--use_params`: use the tuned hyper-parameters.
+- `--dataset`: the dataset you want to use. 
+- `--epochs`: the total number of epochs. 
+- `--lr`: the learning rate.
+- `--early_stop`: patience for early stopping.
+- `--batch_size`: the batch size.
+- `--split`: the split setup. You can set `public` (if applicable) using public splitting setup, or `low` (10/10/80), `median` (50/25/25), and `high` (60/20/20) for randomly setup. 
+- `--split_repeat`: the number of runs, where each run has different random seeds.
+
+### Backbone Setup
+- `--hidden_dim`: the dimension in the hidden layer of GNNs.
+- `--heads`: the number of attention heads in transformer encoder.
+- `--num_layers`: the GNN layers.
+- `--dropout`: the dropout rate of each layer.
+
+### Substructure Pattern Setup
+- `--num_patterns`: the number of patterns used in training for each instance. 
+- `--pattern_size`: the size of patterns (i.e., the random walk length). 
+- `--multiscale`: a list of integers showing the range of walk lengths (no greater than `pattern_size`). 
+- `--p` & `--q`: the random walk hyper-parameters controlling the globalize or localize sampling. 
+- `--pattern_encoder`: the encoder type for patterns (`transformer`, `mean`, `gru`).
+- `--pattern_encoder_layers`: the number of layers in pattern encoder.
+- `--pattern_encoder_heads`: the number of attention heads in transformer pattern encoder
+
+### Anomyous Path Setup
+- `--pe_encoder`: the encoder type for anomyous paths (`mean`, `gru`, `none`).
+- `--pe_weight`: the weight of anonymous path embeddings..
+
+### Node PE Setup
+- `--node_pe`: the type of node positional encoding (`rw`, `lap`, `none`).
+- `--node_pe_dim`: the dimension of node positional encoding.
+
+### Optimization Setup
+- `--weight_decay`: weight decay for regularization.
+- `--label_smoothing`: label smoothing factor.
+- `--grad_clip`: gradient clipping value.
+- `--scheduler`: learning rate scheduler type (`warmup`, `cosine`, `none`).
+- `--warmup_steps`: steps for warmup scheduler.
+- `--eta_min`: minimum learning rate for cosine scheduler.
+- `--opt_beta1`: beta1 for AdamW optimizer.
+- `--opt_beta2`: beta2 for AdamW optimizer.
+- `--opt_eps`: epsilon for AdamW optimizer.
 
 ## Domain Adaptation
 
-TODO
+We provide the domain adaptation setup. You can use the command to run the domain adaptation experiments. You can set the source and target datasets by `--source` and `--target`. You can also set the hyper-parameters by `--use_params`.
 
-## Ablation
+```
+python GPM/da.py --source acm --target dblp --use_params
+```
+We provide the default hyper-parameters for domain adaptation in `config/da.yaml`, consisting of the following settings:
+`acm -> dblp`, `dblp -> acm`, `DE -> EN`, `DE -> ES`, `DE -> FR`, `DE -> PT`, `DE -> RU`.
 
-TODO
 
 ## Citation
 
@@ -88,7 +133,7 @@ If you find the repo is useful for your research, please cite the original paper
 
 ```bibtex
 
-@inproceedings{wang2024gpm,
+@inproceedings{wang2025gpm,
   title={Beyond Message Passing: Neural Graph Pattern Machine},
   author={Wang, Zehong and Zhang, Zheyuan and Ma, Tianyi and Chawla, Nitesh V and Zhang, Chuxu and Ye, Yanfang},
   booktitle={Forty-Second International Conference on Machine Learning},
