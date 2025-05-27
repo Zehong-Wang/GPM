@@ -23,9 +23,9 @@ Please contact `zwang43@nd.edu` or open an issue if you have questions.
 Most existing GNNs rely on message passing, which aggregates local neighborhood information iteratively and struggles to explicitly capture such fundamental motifs, like triangles, k-cliques, and rings. This limitation hinders both expressiveness and long-range dependency modeling. To this end, we introduce the Neural Graph Pattern Machine (GPM), a novel framework that bypasses message passing by learning directly from graph substructures. GPM efficiently extracts, encodes, and prioritizes task-relevant graph patterns, offering greater expressivity and improved ability to capture long-range dependencies. 
 
 
-<img src="assets/workflow.svg">
+<img src="assets/workflow.png">
 
-<img src="assets/framework.svg">
+<img src="assets/framework.png">
 
 
 **The workflow of Neural Graph Pattern Machine (GPM).** Given a graph dataset, GPM utilizes a random walk tokenizer to extract a set of patterns representing the learning instances (nodes, edges, or graphs). These patterns are first encoded by a sequential model and then processed by a transformer encoder, which identifies the dominant patterns relevant to downstream tasks.
