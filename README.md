@@ -6,6 +6,7 @@
 [![pyg](https://img.shields.io/badge/PyG_2.6+-3C2179?logo=pyg&logoColor=#3C2179)](https://pytorch-geometric.readthedocs.io/en/latest/install/installation.html)
 ![license](https://img.shields.io/badge/License-MIT-green.svg?labelColor=gray)
 [![GPM arxiv](http://img.shields.io/badge/arxiv-2501.18739-yellow.svg)](https://arxiv.org/abs/2501.18739)
+[![G2PM](https://img.shields.io/badge/G2PM-blue.svg)](https://github.com/zehong-wang/G2PM)
 
 <img src="assets/logo.png" width='300'>
 </div>
